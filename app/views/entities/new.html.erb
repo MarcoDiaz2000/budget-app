@@ -1,0 +1,16 @@
+<h1>Add new transection</h1>
+
+<%= form_with(model: [@group, @entity]) do |form| %>
+  <%= form.label :name, "Name" %>
+  <%= form.text_field :name %>
+
+  <%= form.label :amount, "Amount" %>
+  <%= form.number_field :amount %>
+
+  <%= form.label :group_ids, "Category" %>
+  <%= form.collection_check_boxes :group_ids, @groups, :id, :name %>
+
+  <%= form.submit "Save" %>
+<% end %>
+
+<%= link_to "Back", group_path(@group) %>
