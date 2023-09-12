@@ -1,0 +1,17 @@
+<h1><%= @group.name %></h1>
+<p>
+  Icon: <%= image_tag(@group.icon) %><br>
+  Total amount: <%= @group.entities.sum(:amount) %>
+</p>
+
+<h2>Transactions</h2>
+<ul>
+  <% @group.entities.each do |entity| %>
+    <li>
+      <%= entity.name %> - <%= entity.amount %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Add new Transactions', new_group_entity_path(@group) %>
+<%= link_to "Back", groups_path %>

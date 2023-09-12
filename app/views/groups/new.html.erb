@@ -1,0 +1,10 @@
+<h1>Create new category</h1>
+
+<%= form_with model: @group do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+ <%= form.select :icon, options_for_select(["icon1.png", "icon2.png", "icon3.png"]) %>
+
+  <%= form.submit %>
+<% end %>

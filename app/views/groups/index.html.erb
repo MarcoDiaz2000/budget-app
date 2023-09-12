@@ -1,0 +1,13 @@
+<h1>Category</h1>
+
+<%= link_to 'Create new category', new_group_path %>
+
+<ul>
+  <% @groups.each do |group| %>
+    <li>
+      Name: <%= link_to group.name, group_path(group) %><br>
+      Icon: <%= image_tag(group.icon) %><br>
+      Total amount: <%= group.entities.sum(:amount) %>
+    </li>
+  <% end %>
+</ul>
