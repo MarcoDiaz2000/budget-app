@@ -1,0 +1,11 @@
+<h1>Welcome to the Home page</h1>
+<%= image_tag("icon1.png") %>
+
+<% if user_signed_in? %>
+  <%= form_with url: destroy_user_session_path, method: :delete do %>
+    <%= submit_tag 'Logout' %>
+  <% end %>
+<% else %>
+  <%= link_to "Register", new_user_registration_path %>
+  <%= link_to "Login", new_user_session_path %>
+<% end %>
