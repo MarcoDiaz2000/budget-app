@@ -1,10 +1,49 @@
-<h1>Create new category</h1>
+<div class="phone-border">
+  <div class="flex-column align-items-centerd-flex flex-column align-items-center" style="min-height: 70vh; padding-bottom: 10vh; max-width: 100%!important;">
+    <%= form_with(model: @group) do |form| %>
+      <!-- Barra superior azul -->
+      <div class="w-100 bg-primary text-white text-center d-flex justify-content-between align-items-center" style="height: 50px;">
+<%= link_to groups_path, class: "text-white ml-3" do %>
+  <i class="fas fa-arrow-left" style="margin-left: 5px;"></i>
+<% end %>
+        <span>CATEGORY</span>
+        <%= form.submit "Save", class: "text-white mr-3 bg-transparent border-0", style: "cursor: pointer;" %>
+      </div>
+
+      <!-- Formulario -->
+      <div class="w-100 mt-auto mb-auto" style="max-width: 100%!important;">
+        <div class="form-group">
+          <%= form.text_field :name, autofocus: true, class: "form-control", placeholder: "Name of the category" %>
+        </div>
 
 <%= form_with model: @group do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
+  <div class="icon-selection">
+    <div class="icon-header">
+      <%= form.label :icon, "Select an Icon" %>
+    </div>
+    <div class="icon-options">
+      <%= form.radio_button :icon, "icon1.png", id: "icon1", class: "d-none" %>
+      <%= label_tag "icon1", image_tag("icon1.png"), class: "icon-label" %>
 
- <%= form.select :icon, options_for_select(["icon1.png", "icon2.png", "icon3.png"]) %>
+      <%= form.radio_button :icon, "icon2.png", id: "icon2", class: "d-none" %>
+      <%= label_tag "icon2", image_tag("icon2.png"), class: "icon-label" %>
 
-  <%= form.submit %>
+      <%= form.radio_button :icon, "icon3.png", id: "icon3", class: "d-none" %>
+      <%= label_tag "icon3", image_tag("icon3.png"), class: "icon-label" %>
+
+      <%= form.radio_button :icon, "icon4.png", id: "icon4", class: "d-none" %>
+      <%= label_tag "icon4", image_tag("icon4.png"), class: "icon-label" %>
+
+      <%= form.radio_button :icon, "icon5.png", id: "icon5", class: "d-none" %>
+      <%= label_tag "icon5", image_tag("icon5.png"), class: "icon-label" %>
+
+
+
+    </div>
+  </div>
 <% end %>
+
+      </div>
+    <% end %>
+  </div>
+</div>

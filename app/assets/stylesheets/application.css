@@ -24,3 +24,42 @@
   box-shadow: 0px 0px 30px gray;
   border-radius: 25px;
 }
+
+.custom-dropdown .options {
+  display: none;
+  position: absolute;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+.custom-dropdown:hover .options {
+  display: block;
+}
+
+.d-none {
+  display: none;
+}
+
+.icon-selection {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-header {
+  margin-bottom: 10px; /* Espacio entre el texto y los íconos */
+}
+
+.icon-label {
+  cursor: pointer;
+  border: 2px solid transparent;
+  display: inline-block;
+  margin: 5px;
+}
+
+.icon-label:hover {
+  border: 2px solid blue;
+}
+
+input[type='radio']:checked + .icon-label {
+  border: 2px solid green;
+}

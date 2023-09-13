@@ -1,17 +1,47 @@
-<h1><%= @group.name %></h1>
-<p>
-  Icon: <%= image_tag(@group.icon) %><br>
-  Total amount: <%= @group.entities.sum(:amount) %>
-</p>
+<div class="phone-border" style="position: relative;">
+  <div class="d-flex flex-column align-items-center" style="min-height: 70vh; padding-bottom: 10vh; max-width: 100%!important;">
 
-<h2>Transactions</h2>
-<ul>
-  <% @group.entities.each do |entity| %>
-    <li>
-      <%= entity.name %> - <%= entity.amount %>
-    </li>
-  <% end %>
-</ul>
+    <!-- Barra superior azul -->
+    <div class="w-100 bg-primary text-white text-center d-flex justify-content-between align-items-center" style="height: 50px;">
+      <i class="fas fa-bars text-white ml-3" style="margin-left: 5px;"></i>
+      <span>TRANSACTIONS</span>
+      <%= link_to 'New', new_group_entity_path(@group), class: "text-white", style: "margin-right: 5px; text-decoration: none; color: inherit;" %>
+    </div>
 
-<%= link_to 'Add new Transactions', new_group_entity_path(@group) %>
-<%= link_to "Back", groups_path %>
+    <!-- Resumen del grupo -->
+    <div class="w-100 d-flex my-2 shadow bg-white">
+      <div style="width: 25%;">
+        <%= image_tag(@group.icon) %>
+      </div>
+      <div style="width: 50%;">
+        <%= @group.name %>
+      </div>
+      <div style="width: 25%;">
+        <%= @group.entities.sum(:amount) %>
+      </div>
+    </div>
+
+    <!-- Lista de Entidades/Transacciones -->
+    <div class="w-100 mt-3" style="flex-grow: 1; max-width: 100%!important;">
+      <ul class="list-unstyled">
+        <% @group.entities.each do |entity| %>
+          <li class="bg-light p-3 my-2 shadow d-flex">
+            <div style="width: 75%;">
+              <%= entity.name %><br>
+<span style="font-size: 0.5em;"><%= entity.created_at.strftime("%Y-%m-%d %H:%M") %></span>
+
+            </div>
+            <div style="width: 25%;">
+              <%= entity.amount %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <!-- Botón para añadir nueva entidad -->
+    <div style="position: absolute; bottom: 0; left: 0; width: 100%; display: flex; align-items: center; justify-content: center; height: 50px; background-color: #5fb523;">
+      <%= link_to 'New Transaction', new_group_entity_path(@group), class: "btn btn-success", style: "color: white; border: 1px solid white; background-color: #5fb523;" %>
+    </div>
+  </div>
+</div>
