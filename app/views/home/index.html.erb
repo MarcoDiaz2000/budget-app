@@ -1,12 +1,10 @@
 <div class="phone-border">
   <div class="container d-flex flex-column align-items-center" style="min-height: 70vh; padding-bottom: 10vh;">
-    <!-- Parte superior para el H1 -->
     <div class="text-center w-100 mb-auto" style="max-width: 400px;">
       <h1 class="mt-0 mb-5">Welcome to the Home page</h1>
       <%= image_tag("icon1.png", class: "img-fluid") %>
     </div>
 
-    <!-- Parte inferior para los botones -->
     <div class="w-100 d-flex flex-column align-items-center mt-auto">
       <% if user_signed_in? %>
         <%= form_with url: destroy_user_session_path, method: :delete do %>
