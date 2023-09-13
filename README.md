@@ -47,7 +47,7 @@ The Ruby on Rails capstone project is about building a mobile web application wh
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](#) _(pending)_
+- [Live Demo Link](https://budgetapp-754b.onrender.com/) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
