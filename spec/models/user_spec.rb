@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
   it 'is valid with a name, email, and password' do
     user = User.new(
       name: 'John Doe',
@@ -46,5 +45,4 @@ RSpec.describe User, type: :model do
     group2 = Group.create(name: 'Group2', user_id: user.id)
     expect(user.groups).to include(group1, group2)
   end
-
 end

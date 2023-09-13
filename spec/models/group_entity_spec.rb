@@ -8,9 +8,9 @@ RSpec.describe GroupEntity, type: :model do
       password: 'password123',
       password_confirmation: 'password123'
     )
-    group = Group.create(name: 'Group1', user: user)
-    entity = Entity.create(name: 'Entity1', user: user)
-    group_entity = GroupEntity.new(group: group, entity: entity)
+    group = Group.create(name: 'Group1', user:)
+    entity = Entity.create(name: 'Entity1', user:)
+    group_entity = GroupEntity.new(group:, entity:)
 
     expect(group_entity).to be_valid
   end
@@ -22,8 +22,8 @@ RSpec.describe GroupEntity, type: :model do
       password: 'password123',
       password_confirmation: 'password123'
     )
-    entity = Entity.create(name: 'Entity1', user: user)
-    group_entity = GroupEntity.new(group: nil, entity: entity)
+    entity = Entity.create(name: 'Entity1', user:)
+    group_entity = GroupEntity.new(group: nil, entity:)
     group_entity.valid?
 
     expect(group_entity.errors[:group]).to include('must exist')
@@ -36,8 +36,8 @@ RSpec.describe GroupEntity, type: :model do
       password: 'password123',
       password_confirmation: 'password123'
     )
-    group = Group.create(name: 'Group1', user: user)
-    group_entity = GroupEntity.new(group: group, entity: nil)
+    group = Group.create(name: 'Group1', user:)
+    group_entity = GroupEntity.new(group:, entity: nil)
     group_entity.valid?
 
     expect(group_entity.errors[:entity]).to include('must exist')
