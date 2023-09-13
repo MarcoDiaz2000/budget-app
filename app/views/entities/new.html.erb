@@ -3,7 +3,7 @@
   <%= form_with(model: [@group, @entity]) do |form| %>
     <!-- Barra superior azul -->
     <div class="w-100 bg-primary text-white text-center d-flex justify-content-between align-items-center" style="height: 50px;">
-      <%= link_to root_path, class: "text-white ml-3" do %>
+      <%= link_to groups_path, class: "text-white ml-3" do %>
         <i class="fas fa-arrow-left" style="margin-left: 5px;"></i>
       <% end %>
       <span>NEW TRANSACTION</span>

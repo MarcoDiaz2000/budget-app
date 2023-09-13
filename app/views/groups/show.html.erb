@@ -2,8 +2,10 @@
   <div class="d-flex flex-column align-items-center" style="min-height: 70vh; padding-bottom: 10vh; max-width: 100%!important;">
 
     <!-- Barra superior azul -->
-    <div class="w-100 bg-primary text-white text-center d-flex justify-content-between align-items-center" style="height: 50px;">
-      <i class="fas fa-bars text-white ml-3" style="margin-left: 5px;"></i>
+   <div class="w-100 bg-primary text-white text-center d-flex justify-content-between align-items-center" style="height: 50px;">
+      <%= link_to groups_path, class: "text-white ml-3" do %>
+        <i class="fas fa-arrow-left" style="margin-left: 5px;"></i>
+      <% end %>
       <span>TRANSACTIONS</span>
       <%= link_to 'New', new_group_entity_path(@group), class: "text-white", style: "margin-right: 5px; text-decoration: none; color: inherit;" %>
     </div>
