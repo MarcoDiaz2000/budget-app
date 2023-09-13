@@ -1,13 +1,40 @@
-<h1>Category</h1>
+<div class="phone-border">
+  <div class="d-flex flex-column align-items-center" style="min-height: 70vh; padding-bottom: 10vh; max-width: 100%!important;">
 
-<%= link_to 'Create new category', new_group_path %>
+    <!-- Barra superior azul -->
+    <div class="w-100 bg-primary text-white text-center d-flex justify-content-between align-items-center mb-auto" style="height: 50px;">
+      <i class="fas fa-bars text-white ml-3" style="margin-left: 5px;"></i>
+      <span>CATEGORIES</span>
+      <%= link_to 'New', new_group_path, class: "text-white", style: "margin-right: 5px; text-decoration: none; color: inherit;" %>
 
-<ul>
-  <% @groups.each do |group| %>
-    <li>
-      Name: <%= link_to group.name, group_path(group) %><br>
-      Icon: <%= image_tag(group.icon) %><br>
-      Total amount: <%= group.entities.sum(:amount) %>
-    </li>
-  <% end %>
-</ul>
+    </div>
+
+    <!-- Lista de Categorías -->
+    <div class="w-100 mb-auto" style="max-width: 100%!important;">
+      <ul class="list-unstyled">
+        <% @groups.each do |group| %>
+          <li class="bg-light p-3 my-2 shadow d-flex">
+            <%= link_to group_path(group), class: "w-100 d-flex align-items-center", style: "text-decoration: none; color: inherit;" do %>
+              <div style="width: 25%;">
+                <%= image_tag(group.icon) %>
+              </div>
+              <div style="width: 50%;">
+                <%= group.name %>
+              </div>
+              <div style="width: 25%;">
+                <%= group.entities.sum(:amount) %>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <!-- Botón para crear nueva categoría -->
+    <div class="w-100 d-flex flex-column align-items-center mt-auto">
+      <div class="w-100 mt-2">
+        <%= link_to 'Create new category', new_group_path, class: "btn btn-success w-100", style: "background-color: #5fb523; color: white;" %>
+      </div>
+    </div>
+  </div>
+</div>
