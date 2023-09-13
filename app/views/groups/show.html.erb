@@ -1,7 +1,6 @@
 <div class="phone-border" style="position: relative;">
   <div class="d-flex flex-column align-items-center" style="min-height: 70vh; padding-bottom: 10vh; max-width: 100%!important;">
 
-    <!-- Barra superior azul -->
    <div class="w-100 bg-primary text-white text-center d-flex justify-content-between align-items-center" style="height: 50px;">
       <%= link_to groups_path, class: "text-white ml-3" do %>
         <i class="fas fa-arrow-left" style="margin-left: 5px;"></i>
@@ -10,7 +9,6 @@
       <%= link_to 'New', new_group_entity_path(@group), class: "text-white", style: "margin-right: 5px; text-decoration: none; color: inherit;" %>
     </div>
 
-    <!-- Resumen del grupo -->
     <div class="w-100 d-flex my-2 shadow bg-white">
       <div style="width: 25%;">
         <%= image_tag(@group.icon) %>
@@ -23,7 +21,6 @@
       </div>
     </div>
 
-    <!-- Lista de Entidades/Transacciones -->
     <div class="w-100 mt-3" style="flex-grow: 1; max-width: 100%!important;">
       <ul class="list-unstyled">
         <% @group.entities.each do |entity| %>
@@ -41,7 +38,6 @@
       </ul>
     </div>
 
-    <!-- Botón para añadir nueva entidad -->
     <div style="position: absolute; bottom: 0; left: 0; width: 100%; display: flex; align-items: center; justify-content: center; height: 50px; background-color: #5fb523;">
       <%= link_to 'New Transaction', new_group_entity_path(@group), class: "btn btn-success", style: "color: white; border: 1px solid white; background-color: #5fb523;" %>
     </div>
