@@ -23,7 +23,7 @@
 <div class="form-group custom-dropdown">
   <label for="category-select" class="control-label">Select Category</label>
   <div class="options">
-  <%= select_tag 'entity[group_ids]', options_for_select(@groups.map { |g| [g.name, g.id] }, @entity.group_ids), class: "form-control", multiple: true %>
+<%= select_tag 'entity[group_ids]', options_for_select(@groups.map { |g| [g.name, g.id] }, @entity.group_ids), id: 'group_select', class: "form-control", multiple: true %>
   </div>
 </div>
 
